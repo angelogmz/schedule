@@ -1,0 +1,120 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    float: left;
+    width: 100%;
+    margin: 0;
+}
+
+@mixin calc($property, $expression) {
+    #{$property}: -moz-calc(#{$expression});
+    #{$property}: -webkit-calc(#{$expression});
+    #{$property}: calc(#{$expression});
+}
+
+.sign-in-body{
+    height: 100vh;
+    overflow: hidden;
+    float: none;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > img{
+        &.bg-img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            object-fit: cover;
+            object-position: center;
+            width: 100%;            
+        }
+
+    }
+}
+
+.sign-in-form{
+    padding: 5rem 5rem;
+    min-width: 425px;
+    max-width: 425px;
+    border: 1px solid #d2d2d2;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.6);
+    a{
+        color: #f75727;
+        text-decoration: none;
+        &:hover{
+            color: inherit;
+            opacity: 0.8;
+        }
+    }
+    .form-logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2rem;
+        flex-direction: column;
+        text-align: center;
+        >div{
+            margin: 1rem 0;
+        }
+    }
+    .form-options {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        align-items: center;
+        >div{
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8em;
+            align-items: center;
+            a{
+                color: #707070;
+            }
+
+            &.rem {
+                width: 50%;
+                justify-content: flex-start;
+                display: flex;
+                align-items: center;
+
+                input {
+                    margin: 0 15px 0 0;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    form{
+        input{
+            width: calc(100% - 10px);
+            height: 2rem;
+            margin-bottom: 1.8rem;
+            padding: 5px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+
+            &.btn-submit{
+                background: #f75727;
+                color: #fff;
+                border: none;
+                width: 100%;
+                letter-spacing: 1px;
+                font-weight: 600;
+                cursor: pointer;
+                &:hover{
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    .form-bottom {
+        margin-top: 2rem;
+    }
+}
