@@ -5,6 +5,7 @@ body{
     float: left;
     width: 100%;
     margin: 0;
+    color: #707070;
 }
 
 @mixin calc($property, $expression) {
@@ -106,6 +107,10 @@ body{
                 width: 100%;
                 letter-spacing: 1px;
                 font-weight: 600;
+                padding: 15px 5px;
+                height: auto;
+                font-size: 1em;
+                text-transform: capitalize;
                 cursor: pointer;
                 &:hover{
                     opacity: 0.8;
@@ -118,3 +123,84 @@ body{
         margin-top: 2rem;
     }
 }
+
+.dashboard-upper {
+	display: flex;
+	justify-content: space-around;
+	align-items: stretch;
+}
+.dashboard-top-left {
+	width: 20%;
+	float: left;
+}
+.dashboard-top-right {
+    float: left;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .notification-icons{
+        width: 25px;
+        height: 25px;
+    }
+    .info-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .notification-icons{
+            margin-right: 25px;
+        }
+        .profile-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .profile-info{
+            >span{
+                width: 100%;
+                clear: both;
+                float: left;
+                &.pro-name {
+                    font-weight: 600;
+                    font-size: 1.05em;
+                }
+                &.pro-desig{
+
+                }
+            }
+        }
+        .pro-img {
+            border: none;
+            overflow: hidden;
+            border-radius: 200px;
+            height: 50px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            img{
+                max-width: 100%;
+                height: auto;
+            }
+
+            &::after{
+                content: '';
+                height: 8px;
+                width: 8px;
+                background: #eee;
+                position: absolute;
+                right: 15px;
+                bottom: 0;
+            }
+
+            &.is-online{
+                &::after{
+                    background: green;
+                }
+            }
+        }
+    }
+}
+
+
